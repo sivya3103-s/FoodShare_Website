@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoodShare | Good Food, Less Waste</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#10b981', // Emerald green
+                        secondary: '#065f46',
+                        accent: '#fef3c7',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Navbar -->
+    <header class="bg-white shadow-sm sticky top-0 z-40">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <span class="text-2xl">♡</span>
+                <span class="text-xl font-bold text-secondary">FoodShare</span>
+            </div>
+            
+            <!-- Desktop Menu -->
+            <ul class="hidden md:flex space-x-8 text-gray-600 font-medium">
+                <li><a href="#home" class="hover:text-primary transition">Home</a></li>
+                <li><a href="#available" class="hover:text-primary transition">Available Food</a></li>
+                <li><a href="#donate" class="hover:text-primary transition">Donate Food</a></li>
+                <li><a href="#available" class="hover:text-primary transition">Find Food</a></li>
+                <li><a href="#about" class="hover:text-primary transition">About Us</a></li>
+            </ul>
+
+            <div class="hidden md:flex space-x-4">
+                <button class="px-4 py-2 text-primary font-medium hover:bg-green-50 rounded-lg transition">Login</button>
+                <button class="px-4 py-2 bg-primary text-white font-medium rounded-lg hover:bg-green-600 transition">Register</button>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-2xl text-gray-600">☰</button>
+        </nav>
+        
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t px-6 py-4 space-y-3">
+            <a href="#home" class="block text-gray-600">Home</a>
+            <a href="#available" class="block text-gray-600">Available Food</a>
+            <a href="#donate" class="block text-gray-600">Donate Food</a>
+            <a href="#about" class="block text-gray-600">About Us</a>
+            <div class="flex space-x-4 pt-2">
+                <button class="text-primary font-medium">Login</button>
+                <button class="px-4 py-2 bg-primary text-white font-medium rounded-lg">Register</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="bg-gradient-to-br from-green-50 to-white py-20 px-6">
+        <div class="container mx-auto text-center max-w-4xl">
+            <p class="text-primary font-semibold mb-2">♡ Good food deserves a second chance</p>
+            <h1 class="text-5xl md:text-6xl font-bold text-secondary mb-6">FoodShare</h1>
+            <p class="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+                A platform that connects surplus food with people who need it. Reduce food waste, share kindness and build stronger communities.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4 mb-8">
+                <a href="#donate" class="px-8 py-3 bg-primary text-white font-semibold rounded-full shadow-lg hover:bg-green-600 transition">＋ Donate Food</a>
+                <a href="#available" class="px-8 py-3 bg-white text-primary font-semibold rounded-full shadow-lg border border-primary hover:bg-green-50 transition">⌕ Find Food</a>
+            </div>
+            <p class="text-gray-500 italic">Share food. Spread smiles. ♥</p>
+        </div>
+    </section>
+
+    <!-- Available Food Section -->
+    <section id="available" class="py-20 px-6 bg-white">
+        <div class="container mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-secondary mb-2">🌿 Available Food</h2>
+                <p class="text-gray-600">Fresh food. Real people. Less waste.</p>
+                <a href="#" class="text-primary font-medium mt-2 inline-block hover:underline">View all →</a>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-white rounded-2xl shadow-md overflow-hidden card-hover border border-gray-100">
+                    <img src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?auto=format&fit=crop&w=700&q=80" alt="Biryani" class="w-full h-48 object-cover">
+                    <div class="p-5">
+                        <span class="text-xs font-semibold text-gray-500 uppercase">From Restaurant</span>
+                        <h3 class="text-xl font-bold text-gray-800 mt-1">Vegetable Biryani</h3>
+                        <div class="flex items-center text-gray-600 text-sm mt-3 space-x-4">
+                            <span>♧ 5 portions</span>
+                            <span>⌖ Gandhipuram</span>
+                        </div>
+                        <p class="text-red-500 text-sm font-medium mt-2">◷ Expires in 2 hours</p>
+                        <button class="w-full mt-4 py-2 bg-primary text-white rounded-lg font-medium hover:bg-green-600 transition">Request Food</button>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-white rounded-2xl shadow-md overflow-hidden card-hover border border-gray-100">
+                    <img src="https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=700&q=80" alt="Sandwiches" class="w-full h-48 object-cover">
+                    <div class="p-5">
+                        <span class="text-xs font-semibold text-gray-500 uppercase">From Hostel</span>
+                        <h3 class="text-xl font-bold text-gray-800 mt-1">Fresh Sandwiches</h3>
+                        <div class="flex items-center text-gray-600 text-sm mt-3 space-x-4">
+                            <span>♧ 10 portions</span>
+                            <span>⌖ Peelamedu</span>
+                        </div>
+                        <p class="text-red-500 text-sm font-medium mt-2">◷ Expires in 3 hours</p>
+                        <button class="w-full mt-4 py-2 bg-primary text-white rounded-lg font-medium hover:bg-green-600 transition">Request Food</button>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-white rounded-2xl shadow-md overflow-hidden card-hover border border-gray-100">
+                    <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=700&q=80" alt="Rice" class="w-full h-48 object-cover">
+                    <div class="p-5">
+                        <span class="text-xs font-semibold text-gray-500 uppercase">From Individual</span>
+                        <h3 class="text-xl font-bold text-gray-800 mt-1">Vegetable Rice</h3>
+                        <div class="flex items-center text-gray-600 text-sm mt-3 space-x-4">
+                            <span>♧ 8 portions</span>
+                            <span>⌖ RS Puram</span>
+                        </div>
+                        <p class="text-red-500 text-sm font-medium mt-2">◷ Expires in 4 hours</p>
+                        <button class="w-full mt-4 py-2 bg-primary text-white rounded-lg font-medium hover:bg-green-600 transition">Request Food</button>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="bg-white rounded-2xl shadow-md overflow-hidden card-hover border border-gray-100">
+                    <img src="https://images.unsplash.com/photo-1610832958506-aa56368176cf?auto=format&fit=crop&w=700&q=80" alt="Fruits" class="w-full h-48 object-cover">
+                    <div class="p-5">
+                        <span class="text-xs font-semibold text-gray-500 uppercase">From Restaurant</span>
+                        <h3 class="text-xl font-bold text-gray-800 mt-1">Fresh Fruits</h3>
+                        <div class="flex items-center text-gray-600 text-sm mt-3 space-x-4">
+                            <span>♧ 12 portions</span>
+                            <span>⌖ Singanallur</span>
+                        </div>
+                        <p class="text-red-500 text-sm font-medium mt-2">◷ Expires in 5 hours</p>
+                        <button class="w-full mt-4 py-2 bg-primary text-white rounded-lg font-medium hover:bg-green-600 transition">Request Food</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="py-20 px-6 bg-green-50">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl font-bold text-secondary mb-2">How It Works</h2>
+            <p class="text-gray-600 mb-12">It's simple. Just 3 steps.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+                <div class="bg-white p-8 rounded-2xl shadow-sm card-hover">
+                    <div class="text-5xl mb-4">🥗</div>
+                    <h3 class="text-xl font-bold text-secondary mb-2">1. Donate</h3>
+                    <p class="text-gray-600">List your surplus food in a few clicks.</p>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-sm card-hover">
+                    <div class="text-5xl mb-4">🤝</div>
+                    <h3 class="text-xl font-bold text-secondary mb-2">2. Connect</h3>
+                    <p class="text-gray-600">People nearby can find and request food.</p>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-sm card-hover">
+                    <div class="text-5xl mb-4">💚</div>
+                    <h3 class="text-xl font-bold text-secondary mb-2">3. Share</h3>
+                    <p class="text-gray-600">Good food reaches those who need it.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Section -->
+    <section id="donate" class="py-20 px-6 bg-white">
+        <div class="container mx-auto text-center max-w-3xl">
+            <h2 class="text-3xl font-bold text-secondary mb-4">Small Actions, Big Impact</h2>
+            <p class="text-gray-600 text-lg mb-8">
+                Have extra food? Don't let it go to waste. Share it with someone who can use it. FoodShare makes it easier for donors and receivers in the community to connect.
+            </p>
+            <a href="#" class="inline-block px-8 py-3 bg-primary text-white font-semibold rounded-full shadow-lg hover:bg-green-600 transition">Donate Food Now</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 px-6 bg-gray-50">
+        <div class="container mx-auto max-w-4xl">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-secondary mb-4">About FoodShare</h2>
+                <p class="text-gray-600 text-lg">
+                    FoodShare is a community-driven idea that connects surplus food from restaurants, hostels and individuals with people who need it. Our goal is to reduce food waste, support communities and encourage a more sustainable future.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                <div class="p-6">
+                    <div class="text-4xl mb-3">♻</div>
+                    <h3 class="font-bold text-lg text-secondary">Reduce</h3>
+                    <p class="text-gray-600">Food waste</p>
+                </div>
+                <div class="p-6">
+                    <div class="text-4xl mb-3">♧</div>
+                    <h3 class="font-bold text-lg text-secondary">Support</h3>
+                    <p class="text-gray-600">Communities</p>
+                </div>
+                <div class="p-6">
+                    <div class="text-4xl mb-3">♡</div>
+                    <h3 class="font-bold text-lg text-secondary">Build</h3>
+                    <p class="text-gray-600">A kinder future</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-secondary text-white py-12 px-6">
+        <div class="container mx-auto flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
+            <div class="text-center md:text-left">
+                <div class="flex items-center justify-center md:justify-start space-x-2 mb-2">
+                    <span class="text-2xl">♡</span>
+                    <span class="text-xl font-bold">FoodShare</span>
+                </div>
+                <p class="text-green-200 text-sm">Good Food · Less Waste · Happier Hearts</p>
+            </div>
+
+            <ul class="flex flex-wrap justify-center gap-6 text-green-200 text-sm">
+                <li><a href="#home" class="hover:text-white transition">Home</a></li>
+                <li><a href="#available" class="hover:text-white transition">Available Food</a></li>
+                <li><a href="#donate" class="hover:text-white transition">Donate Food</a></li>
+                <li><a href="#about" class="hover:text-white transition">About Us</a></li>
+            </ul>
+        </div>
+        <div class="container mx-auto text-center text-green-300 text-sm mt-8 border-t border-green-800 pt-6">
+            Made with ♥ for a better tomorrow · © 2026 FoodShare
+        </div>
+    </footer>
+
+    <!-- Welcome Modal -->
+    <div id="welcome-modal" class="fixed inset-0 z-50 flex items-center justify-center modal-overlay hidden">
+        <div class="bg-white rounded-2xl shadow-2xl p-8 max-w-md w-full mx-4 relative">
+            <button id="close-modal" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 text-2xl font-bold">&times;</button>
+            <h2 class="text-2xl font-bold text-secondary mb-4">Welcome</h2>
+            <p class="text-gray-600 mb-6">
+                This is a frontend demo. The login, registration and donation forms will connect to a backend in a later development step.
+            </p>
+            <div class="space-y-4">
+                <input type="email" placeholder="Email address" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition">
+                <button class="w-full py-3 bg-primary text-white font-semibold rounded-lg hover:bg-green-600 transition">Continue</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom JavaScript -->
+    <script src="script.js" defer></script>
+</body>
+</html>

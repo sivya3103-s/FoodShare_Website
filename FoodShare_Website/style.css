@@ -1,0 +1,47 @@
+/* Base Styles & Typography */
+body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Card Hover Animations */
+.card-hover {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-hover:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Modal Overlay Blur Effect */
+.modal-overlay {
+    backdrop-filter: blur(5px);
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Accessibility: Focus States */
+button:focus, 
+a:focus, 
+input:focus {
+    outline: 2px solid #10b981;
+    outline-offset: 2px;
+}
+
+/* Custom Scrollbar (Optional, for Webkit browsers) */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+    background: #10b981;
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #059669;
+}
